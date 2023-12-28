@@ -25,7 +25,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function getLoggedInUser(): Promise<User> { 
-    const response = await fetchData("/api/users", {method: "GET"});
+    const response = await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/users", {method: "GET"});
 
     return response.json();
 }
@@ -37,7 +37,7 @@ export interface SignUpCredentials {
 }
 
 export async function SignUp(credencials:SignUpCredentials): Promise <User> {
-    const response = await fetchData("/api/users/signup",
+    const response = await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/users/signup",
     {
         method: "POST",
         headers: {
@@ -54,7 +54,7 @@ export interface loginCredencials {
 }
 
 export async function login(credencials:loginCredencials): Promise <User> {
-    const response = await fetchData("/api/users/login",
+    const response = await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/users/login",
     {
         method: "POST",
         headers: {
@@ -66,11 +66,11 @@ export async function login(credencials:loginCredencials): Promise <User> {
 }
 
 export async function logout() {
-    await fetchData("/api/users/logout", {method: "POST"})
+    await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/users/logout", {method: "POST"})
 }
 
 export async function fetchNotes(): Promise<Notes[]> {
-    const response = await fetchData("/api/notes", {method: "GET"});
+    const response = await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/notes", {method: "GET"});
     return response.json();
 }
 
@@ -81,7 +81,7 @@ export interface NoteInput {
 }
 
 export async function createNote (note: NoteInput): Promise<Notes> {
-    const response = await fetchData("/api/notes",
+    const response = await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/notes",
         {
             method: "POST",
             headers: {
@@ -95,7 +95,7 @@ export async function createNote (note: NoteInput): Promise<Notes> {
 }
 
 export async function upDateNote(noteId:string, note: NoteInput): Promise<Notes> {
-    const response = await fetchData("/api/notes/" + noteId, {
+    const response = await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/notes/" + noteId, {
         method: "PATCH",
         headers: {
             "Content-type": "application/json",
@@ -108,6 +108,6 @@ export async function upDateNote(noteId:string, note: NoteInput): Promise<Notes>
 }
 
 export async function deleteNote (noteId: string) {
-    await fetchData("/api/notes/" + noteId, {method: "DELETE"});
+    await fetchData("https://dulcet-crumble-3edb79.netlify.app/api/notes/" + noteId, {method: "DELETE"});
 
 }
