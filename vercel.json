@@ -4,8 +4,12 @@
       {
         "src": "/api/.*",
         "methods": ["OPTIONS"],
-        "headers": ["Origin", "Accept", "Content-Type", "Authorization"],
-        "destination": "/api/:path"
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization"
+        },
+        "continue": true
       },
       {
         "src": "/api/.*",
