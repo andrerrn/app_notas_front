@@ -3,7 +3,7 @@ import {Notes} from "../models/notes";
 import { User } from "../models/user";
 
 
-const backendBaseUrl = "https://dulcet-crumble-3edb79.netlify.app";
+const backendBaseUrl = "https://dulcet-crumble-3edb79.netlify.app/api";
 
 async function fetchData(input: RequestInfo, init?: RequestInit) {
     const response = await fetch (`${backendBaseUrl}${input}`, init);
