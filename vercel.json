@@ -2,9 +2,10 @@
     "version": 2,
     "routes": [
       {
-        "handle": "cors",
         "src": "/api/.*",
-        "method": "OPTIONS"
+        "methods": ["OPTIONS"],
+        "headers": ["Origin", "Accept", "Content-Type", "Authorization"],
+        "destination": "/api/:path"
       },
       {
         "src": "/api/.*",
