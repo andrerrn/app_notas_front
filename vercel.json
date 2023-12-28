@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "handle": "cors",
+        "src": "/api/.*",
+        "method": "OPTIONS"
+      },
+      {
+        "src": "/api/.*",
+        "dest": "/api/:path"
+      }
+    ]
+  }
